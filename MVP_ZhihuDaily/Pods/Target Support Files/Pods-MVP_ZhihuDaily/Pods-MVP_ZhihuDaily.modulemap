@@ -1,0 +1,6 @@
+framework module Pods_MVP_ZhihuDaily {
+  umbrella header "Pods-MVP_ZhihuDaily-umbrella.h"
+
+  export *
+  module * { export * }
+}
