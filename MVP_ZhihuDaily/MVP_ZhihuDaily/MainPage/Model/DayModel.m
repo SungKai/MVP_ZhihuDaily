@@ -18,7 +18,7 @@
     return self;
 }
 
-+ (void)getLatest:(void (^)(DayModel * _Nonnull))lastestDayModel {
++ (void)getLatest:(void (^)(DayModel * _Nonnull))LatestDayModel {
     [[NetworkManager shareManager]
      requestURL:latestNews
      type:NetworkManagerRequestTypeGet
@@ -30,7 +30,7 @@
         dayModel.date = responseObject[@"date"];
         dayModel.stories = [dayModel cellNewsArray:responseObject[@"stories"]];
         dayModel.top_stories = [dayModel bannerNewsArray:responseObject[@"top_stories"]];
-        lastestDayModel(dayModel);
+        LatestDayModel(dayModel);
     }
      failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
         NSLog(@"latest 数据请求失败");

@@ -22,9 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSArray<DataModel *> *stories;
 
-/// 请求Lastest数据
-/// @param lastestDayModel 当天的新闻数据
-+ (void)getLatest:(void(^)(DayModel *))lastestDayModel;
+/// 请求Latest数据
+/// @param LatestDayModel 当天的新闻数据
++ (void)getLatest:(void(^)(DayModel *))LatestDayModel;
                         
 /// 请求Before数据
 /// @param date 日期

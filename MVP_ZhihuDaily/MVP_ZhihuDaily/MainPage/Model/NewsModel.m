@@ -9,4 +9,20 @@
 
 @implementation NewsModel
 
+/// 获取最新新闻
+- (void)fetchLatestNews {
+    [DayModel getLatest:^(DayModel * _Nonnull latestModel) {
+        [self.delegate didReceiveLatestNews:latestModel];
+    }];
+}
+
+- (void)feachBeforeNewsWithDate:(NSString *)date {
+    [DayModel getBeforeDate:date AndModel:^(DayModel * _Nonnull beforeModel) {
+        [self.delegate didReceiveBeforeNews:beforeModel];
+    }];
+}
+
+
+
+
 @end
