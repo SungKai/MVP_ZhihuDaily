@@ -12,11 +12,15 @@
 		B5B7D9C929DAD0A7008464C4 /* MainTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B7D9C829DAD0A7008464C4 /* MainTableVC.m */; };
 		B5B7D9CD29DAD0F2008464C4 /* MainPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B7D9CC29DAD0F2008464C4 /* MainPresenter.m */; };
 		B5B7D9D229DADAAD008464C4 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B7D9D129DADAAD008464C4 /* NetworkManager.m */; };
+		B5B7D9D529DAFD89008464C4 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B7D9D429DAFD89008464C4 /* DataModel.m */; };
+		B5B7D9D829DAFE55008464C4 /* BannerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B7D9D729DAFE55008464C4 /* BannerDataModel.m */; };
+		B5B7D9DB29DB00E8008464C4 /* DayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B7D9DA29DB00E8008464C4 /* DayModel.m */; };
 		B5C02FD229D5BAF200004953 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C02FD129D5BAF200004953 /* AppDelegate.m */; };
 		B5C02FDB29D5BAF200004953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C02FD929D5BAF200004953 /* Main.storyboard */; };
 		B5C02FDD29D5BAF300004953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C02FDC29D5BAF300004953 /* Assets.xcassets */; };
 		B5C02FE029D5BAF300004953 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C02FDE29D5BAF300004953 /* LaunchScreen.storyboard */; };
 		B5C02FE329D5BAF300004953 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C02FE229D5BAF300004953 /* main.m */; };
+		B5FE3A6929DBEA9B00231578 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A6829DBEA9B00231578 /* NewsModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,12 @@
 		B5B7D9CC29DAD0F2008464C4 /* MainPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainPresenter.m; sourceTree = "<group>"; };
 		B5B7D9D029DADAAD008464C4 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		B5B7D9D129DADAAD008464C4 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		B5B7D9D329DAFD89008464C4 /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		B5B7D9D429DAFD89008464C4 /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		B5B7D9D629DAFE55008464C4 /* BannerDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerDataModel.h; sourceTree = "<group>"; };
+		B5B7D9D729DAFE55008464C4 /* BannerDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerDataModel.m; sourceTree = "<group>"; };
+		B5B7D9D929DB00E8008464C4 /* DayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DayModel.h; sourceTree = "<group>"; };
+		B5B7D9DA29DB00E8008464C4 /* DayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayModel.m; sourceTree = "<group>"; };
 		B5C02FCD29D5BAF200004953 /* MVP_ZhihuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVP_ZhihuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C02FD029D5BAF200004953 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5C02FD129D5BAF200004953 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,6 +50,8 @@
 		B5C02FE129D5BAF300004953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5C02FE229D5BAF300004953 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B5C02FE929D5BD5900004953 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		B5FE3A6729DBEA9B00231578 /* NewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
+		B5FE3A6829DBEA9B00231578 /* NewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,14 @@
 		B5B7D9CE29DAD9E7008464C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B5FE3A6729DBEA9B00231578 /* NewsModel.h */,
+				B5FE3A6829DBEA9B00231578 /* NewsModel.m */,
+				B5B7D9D929DB00E8008464C4 /* DayModel.h */,
+				B5B7D9DA29DB00E8008464C4 /* DayModel.m */,
+				B5B7D9D329DAFD89008464C4 /* DataModel.h */,
+				B5B7D9D429DAFD89008464C4 /* DataModel.m */,
+				B5B7D9D629DAFE55008464C4 /* BannerDataModel.h */,
+				B5B7D9D729DAFE55008464C4 /* BannerDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,10 +302,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5FE3A6929DBEA9B00231578 /* NewsModel.m in Sources */,
 				B5B7D9C329DAD059008464C4 /* MainVC.m in Sources */,
 				B5C02FD229D5BAF200004953 /* AppDelegate.m in Sources */,
 				B5B7D9C929DAD0A7008464C4 /* MainTableVC.m in Sources */,
 				B5C02FE329D5BAF300004953 /* main.m in Sources */,
+				B5B7D9D529DAFD89008464C4 /* DataModel.m in Sources */,
+				B5B7D9DB29DB00E8008464C4 /* DayModel.m in Sources */,
+				B5B7D9D829DAFE55008464C4 /* BannerDataModel.m in Sources */,
 				B5B7D9D229DADAAD008464C4 /* NetworkManager.m in Sources */,
 				B5B7D9CD29DAD0F2008464C4 /* MainPresenter.m in Sources */,
 			);
