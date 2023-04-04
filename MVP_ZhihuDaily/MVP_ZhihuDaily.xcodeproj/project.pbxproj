@@ -52,6 +52,7 @@
 		B5C02FE929D5BD5900004953 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		B5FE3A6729DBEA9B00231578 /* NewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		B5FE3A6829DBEA9B00231578 /* NewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
+		B5FE3A6E29DC585200231578 /* MainProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		B5B7D9C529DAD073008464C4 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				B5FE3A6E29DC585200231578 /* MainProtocol.h */,
 				B5B7D9C129DAD059008464C4 /* MainVC.h */,
 				B5B7D9C229DAD059008464C4 /* MainVC.m */,
 			);

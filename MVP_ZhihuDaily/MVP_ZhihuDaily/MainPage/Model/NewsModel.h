@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取最新新闻
 - (void)fetchLatestNews;
 
-- (void)feachBeforeNewsWithDate:(NSString *)date;
+- (void)fetchBeforeNewsWithDate:(NSString *)date;
 
 
 @end

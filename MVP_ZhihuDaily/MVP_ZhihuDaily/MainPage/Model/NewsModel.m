@@ -16,7 +16,7 @@
     }];
 }
 
-- (void)feachBeforeNewsWithDate:(NSString *)date {
+- (void)fetchBeforeNewsWithDate:(NSString *)date {
     [DayModel getBeforeDate:date AndModel:^(DayModel * _Nonnull beforeModel) {
         [self.delegate didReceiveBeforeNews:beforeModel];
     }];
