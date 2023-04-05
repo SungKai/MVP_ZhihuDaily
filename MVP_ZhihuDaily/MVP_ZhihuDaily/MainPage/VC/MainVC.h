@@ -7,6 +7,15 @@
 
 #import <UIKit/UIKit.h>
 
+// Presenter
+#import "MainPresenter.h"
+
+// View
+#import "MainTableView.h"
+
+// Protocol
+#import "MainProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MainVC : UIViewController

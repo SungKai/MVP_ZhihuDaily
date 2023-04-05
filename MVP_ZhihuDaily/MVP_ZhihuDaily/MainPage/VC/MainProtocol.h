@@ -8,13 +8,15 @@
 #ifndef MainProtocol_h
 #define MainProtocol_h
 
+#import "DayModel.h"
+
 @protocol MainProtocol <NSObject>
 
 /// 展示最新新闻
-- (void)showLatestNews:(id)latestModel;
+- (void)showLatestNews:(DayModel)latestModel;
 
 /// 展示过往新闻
-- (void)showBeforeNews:(id)beforeModel;
+- (void)showBeforeNews:(DayModel)beforeModel;
 
 @end
 
