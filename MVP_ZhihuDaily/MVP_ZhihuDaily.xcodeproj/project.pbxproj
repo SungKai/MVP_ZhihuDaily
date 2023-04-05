@@ -20,7 +20,7 @@
 		B5C02FE029D5BAF300004953 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C02FDE29D5BAF300004953 /* LaunchScreen.storyboard */; };
 		B5C02FE329D5BAF300004953 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C02FE229D5BAF300004953 /* main.m */; };
 		B5FE3A6929DBEA9B00231578 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A6829DBEA9B00231578 /* NewsModel.m */; };
-		B5FE3A7129DD4FF000231578 /* MainTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A7029DD4FF000231578 /* MainTableView.m */; };
+		B5FE3A7529DD6CE300231578 /* NewsData.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A7429DD6CE300231578 /* NewsData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +51,8 @@
 		B5FE3A6729DBEA9B00231578 /* NewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		B5FE3A6829DBEA9B00231578 /* NewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
 		B5FE3A6E29DC585200231578 /* MainProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainProtocol.h; sourceTree = "<group>"; };
-		B5FE3A6F29DD4FF000231578 /* MainTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableView.h; sourceTree = "<group>"; };
-		B5FE3A7029DD4FF000231578 /* MainTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableView.m; sourceTree = "<group>"; };
+		B5FE3A7329DD6CE300231578 /* NewsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsData.h; sourceTree = "<group>"; };
+		B5FE3A7429DD6CE300231578 /* NewsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				B5B7D9CA29DAD0B7008464C4 /* Presenter */,
+				B5FE3A7229DD6C3A00231578 /* Protocol */,
 				B5B7D9C529DAD073008464C4 /* VC */,
 				B5B7D9C629DAD080008464C4 /* View */,
 				B5B7D9CE29DAD9E7008464C4 /* Model */,
@@ -82,7 +83,6 @@
 		B5B7D9C529DAD073008464C4 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				B5FE3A6E29DC585200231578 /* MainProtocol.h */,
 				B5B7D9C129DAD059008464C4 /* MainVC.h */,
 				B5B7D9C229DAD059008464C4 /* MainVC.m */,
 			);
@@ -92,8 +92,6 @@
 		B5B7D9C629DAD080008464C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B5FE3A6F29DD4FF000231578 /* MainTableView.h */,
-				B5FE3A7029DD4FF000231578 /* MainTableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +169,16 @@
 				B5C02FE229D5BAF300004953 /* main.m */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5FE3A7229DD6C3A00231578 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE3A6E29DC585200231578 /* MainProtocol.h */,
+				B5FE3A7329DD6CE300231578 /* NewsData.h */,
+				B5FE3A7429DD6CE300231578 /* NewsData.m */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		E2FED50C52CD4F8286CF9007 /* Frameworks */ = {
@@ -306,13 +314,13 @@
 			files = (
 				B5FE3A6929DBEA9B00231578 /* NewsModel.m in Sources */,
 				B5B7D9C329DAD059008464C4 /* MainVC.m in Sources */,
-				B5FE3A7129DD4FF000231578 /* MainTableView.m in Sources */,
 				B5C02FD229D5BAF200004953 /* AppDelegate.m in Sources */,
 				B5C02FE329D5BAF300004953 /* main.m in Sources */,
 				B5B7D9D529DAFD89008464C4 /* DataModel.m in Sources */,
 				B5B7D9DB29DB00E8008464C4 /* DayModel.m in Sources */,
 				B5B7D9D829DAFE55008464C4 /* BannerDataModel.m in Sources */,
 				B5B7D9D229DADAAD008464C4 /* NetworkManager.m in Sources */,
+				B5FE3A7529DD6CE300231578 /* NewsData.m in Sources */,
 				B5B7D9CD29DAD0F2008464C4 /* MainPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +474,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -495,6 +504,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

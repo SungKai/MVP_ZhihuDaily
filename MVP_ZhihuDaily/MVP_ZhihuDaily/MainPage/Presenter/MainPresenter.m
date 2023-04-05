@@ -64,7 +64,31 @@
 /// 请求Latest 成功的回调
 - (void)didReceiveLatestNews:(DayModel *)latestDayModel {
     // 获取到的用户信息传递给View层进行展示
-    [self.view showLatestNews:latestDayModel];
+    // 这个app比较幸运，直接请求到的model数据和UI所要展示的数据基本一致，不需要进行过多换转
+    // banner 数据
+    NSMutableArray *bannerMa = [NSMutableArray array];
+    for (BannerDataModel *model in latestDayModel.top_stories) {
+        BannerData *data = [[BannerData alloc] init];
+        data.title = model.title;
+        data.hint = model.hint;
+        data.imageURL = model.imageURL;
+        data.image_hue = model.image_hue;
+        [bannerMa addObject:data];
+    }
+    
+    // 列表数据
+    NSMutableArray *listMa = [NSMutableArray array];
+    for (DataModel *model in latestDayModel.stories) {
+        NewsData *data = [[NewsData alloc] init];
+        data.title = model.title;
+        data.hint = model.hint;
+        data.imageURL = model.imageURL;
+        [listMa addObject:data];
+    }
+    NSDictionary *dict = @{@"bannerData": bannerMa,
+                           @"listData": listMa
+    };
+    [self.view showLatestNews:dict];
 }
 
 /// 请求before 成功的回调
@@ -75,3 +99,7 @@
 
 
 @end
+
+
+
+

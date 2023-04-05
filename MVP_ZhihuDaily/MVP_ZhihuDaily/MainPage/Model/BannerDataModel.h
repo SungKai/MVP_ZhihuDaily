@@ -12,19 +12,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BannerDataModel : NSObject
 
-@property (nonatomic, copy) NSString * image_hue;
+@property (nonatomic, copy) NSString *image_hue;
 
-@property (nonatomic, copy) NSString * image;
+@property (nonatomic, copy) NSString *image;
 
-@property (nonatomic, copy) NSString * title;
+@property (nonatomic, copy) NSString *title;
 
-@property (nonatomic, copy) NSString * url;
+@property (nonatomic, copy) NSString *url;
 
-@property (nonatomic, copy) NSString * imageURL;
+@property (nonatomic, copy) NSString *imageURL;
 
-@property (nonatomic, copy) NSString * hint;
+@property (nonatomic, copy) NSString *hint;
 
-@property (nonatomic, copy) NSString * ID;
+@property (nonatomic, copy) NSString *ID;
 
 /// Banner创建
 /// @param dic 每天的banner数据

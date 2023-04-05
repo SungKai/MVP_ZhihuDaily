@@ -8,11 +8,13 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-//偏好设置的宏定义
+// 偏好设置的宏定义
 #define USERDEFAULTS [NSUserDefaults standardUserDefaults]
-//屏幕的宽和长
+// 屏幕的宽和长
 #define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
 #define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
+// 状态栏高度
+#define STATUS_HEIGHT [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height
 
 // MARK: URL
 

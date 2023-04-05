@@ -9,14 +9,15 @@
 #define MainProtocol_h
 
 #import "DayModel.h"
+#import "NewsData.h"
 
 @protocol MainProtocol <NSObject>
 
 /// 展示最新新闻
-- (void)showLatestNews:(DayModel)latestModel;
+- (void)showLatestNews:(NSDictionary *)latestModel;
 
 /// 展示过往新闻
-- (void)showBeforeNews:(DayModel)beforeModel;
+- (void)showBeforeNews:(DayModel *)beforeModel;
 
 @end
 

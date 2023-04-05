@@ -10,9 +10,6 @@
 // Presenter
 #import "MainPresenter.h"
 
-// View
-#import "MainTableView.h"
-
 // Protocol
 #import "MainProtocol.h"
 

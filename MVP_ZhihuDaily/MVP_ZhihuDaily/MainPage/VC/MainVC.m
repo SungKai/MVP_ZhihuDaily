@@ -8,14 +8,16 @@
 #import "MainVC.h"
 
 @interface MainVC () <
-    MainProtocol
+    MainProtocol,
+    UITableViewDataSource,
+    UITableViewDelegate
 >
 
 /// Presenter
 @property (nonatomic, strong) MainPresenter *presenter;
 
 /// 新闻列表
-@property (nonatomic, strong) MainTableView *tableView;
+@property (nonatomic, strong) UITableView *tableView;
 
 /// banner新闻数据
 @property (nonatomic, copy) NSArray *bannerNewsList;
@@ -43,17 +45,15 @@
 // MARK: <MainProtocol>
 
 /// 展示最新新闻
-- (void)showLatestNews:(DayModel *)latestModel {
-    // 处理最新信息的展示
-    NSArray *latestNewsArray = latestModel.stories;
+- (void)showLatestNews:(NSDictionary *)latestModel {
     [self.newsList removeAllObjects];
-    [self.newsList addObject:latestModel];
-    
-    self.bannerNewsList = latestModel.top_stories;
+    [self.newsList addObject:latestModel[@"listData"]];
+    self.bannerNewsList = latestModel[@"bannerData"];
     // TODO: Banner reloadData
     
     [self.tableView reloadData];
 }
+
 
 /// 展示过往新闻
 - (void)showBeforeNews:(DayModel *)beforeModel {
@@ -71,4 +71,10 @@
     return _presenter;
 }
 
+- (UITableView *)tableView {
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, STATUS_HEIGHT + 60, DEVICESCREENWIDTH, DEVICESCREENHEIGHT - (STATUS_HEIGHT + 60)) style:UITableViewStyleGrouped];
+    }
+    return _tableView;
+}
 @end
