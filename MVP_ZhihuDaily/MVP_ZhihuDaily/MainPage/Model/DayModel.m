@@ -59,7 +59,7 @@
 - (NSArray *)cellNewsArray:(NSArray *)array {
     NSArray *ary = [NSArray array];
     NSMutableArray *ma = [NSMutableArray array];
-    for (NSDictionary *dic in array){
+    for (NSDictionary *dic in array) {
         DataModel *dataModel = [[DataModel alloc] initWithNewsDic:dic];
         [ma addObject:dataModel];
     }

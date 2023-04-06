@@ -11,8 +11,12 @@
 #import "MainPresenter.h"
 
 // View
+#import "TopView.h"
 #import "MainTableViewCell.h"
 #import "DateHeaderView.h"
+
+// Tools
+#import "NSDate+Day.h"
 
 // Protocol
 #import "MainProtocol.h"

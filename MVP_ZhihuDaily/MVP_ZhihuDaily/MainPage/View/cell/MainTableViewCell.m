@@ -12,7 +12,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self){
+    if (self) {
         self.backgroundColor = UIColor.whiteColor;
         [self.contentView addSubview:self.titleLab];
         [self.contentView addSubview:self.hintLab];
@@ -51,7 +51,7 @@
 #pragma mark - Getter
 
 - (UILabel *)titleLab{
-    if (_titleLab == nil){
+    if (_titleLab == nil) {
         _titleLab = [[UILabel alloc]init];
         _titleLab.textColor = UIColor.blackColor;
         _titleLab.font = [UIFont boldSystemFontOfSize:17];
@@ -64,7 +64,7 @@
 }
 
 - (UILabel *)hintLab{
-    if (_hintLab == nil){
+    if (_hintLab == nil) {
         _hintLab = [[UILabel alloc]init];
         _hintLab.textColor = [UIColor lightGrayColor];
         _hintLab.font = [UIFont systemFontOfSize:14];
@@ -77,7 +77,7 @@
 }
 
 - (UIImageView *)imgView{
-    if (_imgView == nil){
+    if (_imgView == nil) {
         _imgView = [[UIImageView alloc]init];
         _imgView.backgroundColor = [UIColor grayColor];
         _imgView.layer.masksToBounds = YES;

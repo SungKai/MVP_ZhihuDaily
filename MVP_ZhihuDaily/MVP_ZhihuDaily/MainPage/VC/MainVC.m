@@ -17,6 +17,9 @@
 /// Presenter
 @property (nonatomic, strong) MainPresenter *presenter;
 
+/// 顶部View
+@property (nonatomic, strong) TopView *topView;
+
 /// 新闻列表
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -32,13 +35,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = UIColor.whiteColor;
     self.bannerNewsList = [NSArray array];
     self.newsList = [NSMutableArray array];
+    [self.view addSubview:self.topView];
+    [self setTodayDateString];
     // 请求最新信息
     [self.presenter fetchLatestNewsData];
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+}
+
+
+#pragma mark - Method
+
+- (void)setTodayDateString {
+    self.topView.monthLab.text = [[NSDate today] transformChinese];
+    self.topView.dayLab.text = [[NSDate today]day];
 }
 
 #pragma mark - Delegate
@@ -91,11 +105,11 @@
 
 // 每当拉到每个section的FooterView就加载Before数据
 - (void)tableView:(UITableView *)tableView willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section {
-    if (self.newsList.count == section + 1){
+    if (self.newsList.count == section + 1) {
         NewsData *data = self.newsList.lastObject[0];
         NSString *date = data.date;
         [self.presenter fetchBeforeNewsData:date];
-    } 
+    }
 }
 
 // 设置footerView
@@ -141,10 +155,19 @@
     return _presenter;
 }
 
+- (TopView *)topView {
+    if (_topView == nil) {
+        _topView = [[TopView alloc] initWithFrame:CGRectMake(0, STATUS_HEIGHT, DEVICESCREENWIDTH, 60)];
+    }
+    return _topView;
+}
+
 - (UITableView *)tableView {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, STATUS_HEIGHT + 60, DEVICESCREENWIDTH, DEVICESCREENHEIGHT - (STATUS_HEIGHT + 60)) style:UITableViewStyleGrouped];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }
+
 @end

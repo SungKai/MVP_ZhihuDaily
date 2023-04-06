@@ -86,7 +86,7 @@
         return;
     }
 
-    if ([self isActiveTaskURLEqualToURLRequest:urlRequest]){
+    if ([self isActiveTaskURLEqualToURLRequest:urlRequest]) {
         return;
     }
 

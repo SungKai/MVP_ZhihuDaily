@@ -12,7 +12,8 @@
 
 - (instancetype)initWithDateHeaderViewWithDate:(NSString *)date{
     self = [super init];
-    if (self){
+    if (self) {
+        self.backgroundColor = UIColor.whiteColor;
         [self addSubview:self.dateLabel];
         [self addSubview:self.line];
         self.dateLabel.text = date;
@@ -40,7 +41,7 @@
 #pragma mark - Getter
 
 - (UILabel *)dateLabel{
-    if (_dateLabel == nil){
+    if (_dateLabel == nil) {
         _dateLabel = [[UILabel alloc]init];
         _dateLabel.textColor = [UIColor colorWithRed:155/255.0 green:155/255.0 blue:155/255.0 alpha:1.0];
         _dateLabel.font = [UIFont boldSystemFontOfSize:16];
@@ -49,7 +50,7 @@
 }
 
 - (UIView *)line{
-    if (_line == nil){
+    if (_line == nil) {
         _line = [[UIView alloc]init];
         _line.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1.0];
     }
