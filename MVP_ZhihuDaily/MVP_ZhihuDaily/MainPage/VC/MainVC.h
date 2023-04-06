@@ -12,6 +12,7 @@
 
 // View
 #import "MainTableViewCell.h"
+#import "DateHeaderView.h"
 
 // Protocol
 #import "MainProtocol.h"

@@ -84,6 +84,7 @@
         data.title = model.title;
         data.hint = model.hint;
         data.imageURL = model.imageURL;
+        data.date = latestDayModel.date;
         [listMa addObject:data];
     }
     NSArray *listData = [NSArray array];
@@ -104,6 +105,7 @@
         data.title = model.title;
         data.hint = model.hint;
         data.imageURL = model.imageURL;
+        data.date = beforeDayModel.date;
         [listMa addObject:data];
     }
     [self.view showBeforeNews:listMa];

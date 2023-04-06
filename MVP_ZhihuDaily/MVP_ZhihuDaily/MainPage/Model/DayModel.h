@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DayModel : NSObject
 
-@property (nonatomic, copy) NSString * date;
+@property (nonatomic, copy) NSString *date;
 
 @property (nonatomic, strong) NSArray<BannerDataModel *> *top_stories;
 

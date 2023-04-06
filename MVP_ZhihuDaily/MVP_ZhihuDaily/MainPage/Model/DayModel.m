@@ -40,7 +40,7 @@
 /// 请求Before数据
 + (void)getBeforeDate:(NSString *)date AndModel:(void(^)(DayModel *))beforeModel {
     [[NetworkManager shareManager]
-     requestURL:[NSString stringWithFormat:beforeNews, date]
+     requestURL:[NSString stringWithFormat:@"https://news-at.zhihu.com/api/3/stories/before/%@", date]
      type:NetworkManagerRequestTypeGet
      parameters:nil
      progress:nil

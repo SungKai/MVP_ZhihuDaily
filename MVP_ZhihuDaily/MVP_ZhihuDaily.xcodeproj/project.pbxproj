@@ -22,6 +22,7 @@
 		B5FE3A6929DBEA9B00231578 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A6829DBEA9B00231578 /* NewsModel.m */; };
 		B5FE3A7529DD6CE300231578 /* NewsData.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A7429DD6CE300231578 /* NewsData.m */; };
 		B5FE3A7829DDA4C700231578 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A7729DDA4C700231578 /* MainTableViewCell.m */; };
+		B5FE3A7B29DEEA3300231578 /* DateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A7A29DEEA3300231578 /* DateHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		B5FE3A7429DD6CE300231578 /* NewsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsData.m; sourceTree = "<group>"; };
 		B5FE3A7629DDA4C700231578 /* MainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		B5FE3A7729DDA4C700231578 /* MainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		B5FE3A7929DEEA3300231578 /* DateHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateHeaderView.h; sourceTree = "<group>"; };
+		B5FE3A7A29DEEA3300231578 /* DateHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +98,8 @@
 		B5B7D9C629DAD080008464C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B5FE3A7629DDA4C700231578 /* MainTableViewCell.h */,
-				B5FE3A7729DDA4C700231578 /* MainTableViewCell.m */,
+				B5FE3A7C29DEEA3A00231578 /* cell */,
+				B5FE3A7D29DEEA4400231578 /* date */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +187,24 @@
 				B5FE3A7429DD6CE300231578 /* NewsData.m */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B5FE3A7C29DEEA3A00231578 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE3A7629DDA4C700231578 /* MainTableViewCell.h */,
+				B5FE3A7729DDA4C700231578 /* MainTableViewCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		B5FE3A7D29DEEA4400231578 /* date */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE3A7929DEEA3300231578 /* DateHeaderView.h */,
+				B5FE3A7A29DEEA3300231578 /* DateHeaderView.m */,
+			);
+			path = date;
 			sourceTree = "<group>";
 		};
 		E2FED50C52CD4F8286CF9007 /* Frameworks */ = {
@@ -326,6 +347,7 @@
 				B5B7D9DB29DB00E8008464C4 /* DayModel.m in Sources */,
 				B5B7D9D829DAFE55008464C4 /* BannerDataModel.m in Sources */,
 				B5B7D9D229DADAAD008464C4 /* NetworkManager.m in Sources */,
+				B5FE3A7B29DEEA3300231578 /* DateHeaderView.m in Sources */,
 				B5FE3A7529DD6CE300231578 /* NewsData.m in Sources */,
 				B5B7D9CD29DAD0F2008464C4 /* MainPresenter.m in Sources */,
 			);

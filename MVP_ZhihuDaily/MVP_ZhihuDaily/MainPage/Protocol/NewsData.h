@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *hint;
 
+@property (nonatomic, copy) NSString *date;
+
 @end
 
 @interface BannerData : NSObject

@@ -89,21 +89,47 @@
 
 // MARK: <UITableViewDelegate>
 
+// 每当拉到每个section的FooterView就加载Before数据
+- (void)tableView:(UITableView *)tableView willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section {
+    if (self.newsList.count == section + 1){
+        NewsData *data = self.newsList.lastObject[0];
+        NSString *date = data.date;
+        [self.presenter fetchBeforeNewsData:date];
+    } 
+}
+
+// 设置footerView
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = UIColor.whiteColor;
+    return view;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 0.01;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     //要设置日期
-    if (section == 0){
+    if (section == 0) {
         return 0;
-    }else{
+    } else {
         return 30;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 105;
+}
+
+// 设置DateView为TableView的headerView
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NewsData *data = self.newsList[section - 1][0];
+    NSString *date = data.date;
+    NSInteger month = [[date substringWithRange:NSMakeRange(4, 2)] integerValue];
+    NSInteger day = [[date substringFromIndex:6] integerValue];
+    DateHeaderView *dateHeaderView = [[DateHeaderView alloc] initWithDateHeaderViewWithDate:[NSString stringWithFormat:@"%ld月%ld日", month, day]];
+    return dateHeaderView;
 }
 
 #pragma mark - Getter
