@@ -75,7 +75,8 @@
         data.image_hue = model.image_hue;
         [bannerMa addObject:data];
     }
-    
+    NSArray *bannerData = [NSArray array];
+    bannerData = bannerMa;
     // 列表数据
     NSMutableArray *listMa = [NSMutableArray array];
     for (DataModel *model in latestDayModel.stories) {
@@ -85,16 +86,27 @@
         data.imageURL = model.imageURL;
         [listMa addObject:data];
     }
-    NSDictionary *dict = @{@"bannerData": bannerMa,
-                           @"listData": listMa
+    NSArray *listData = [NSArray array];
+    listData = listMa;
+    NSDictionary *dict = @{@"bannerData": bannerData,
+                           @"listData": listData
     };
     [self.view showLatestNews:dict];
+
 }
 
 /// 请求before 成功的回调
 - (void)didReceiveBeforeNews:(DayModel *)beforeDayModel {
     // 获取到的用户信息传递给View层进行展示
-    [self.view showBeforeNews:beforeDayModel];
+    NSMutableArray *listMa = [NSMutableArray array];
+    for (DataModel *model in beforeDayModel.stories) {
+        NewsData *data = [[NewsData alloc] init];
+        data.title = model.title;
+        data.hint = model.hint;
+        data.imageURL = model.imageURL;
+        [listMa addObject:data];
+    }
+    [self.view showBeforeNews:listMa];
 }
 
 

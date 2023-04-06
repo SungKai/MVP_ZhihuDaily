@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
                         
 /// 请求Before数据
 /// @param date 日期
-/// @param model 一天的新闻数据
+/// @param beforeModel 一天的新闻数据
 + (void)getBeforeDate:(NSString *)date AndModel:(void(^)(DayModel *))beforeModel;
 
 @end

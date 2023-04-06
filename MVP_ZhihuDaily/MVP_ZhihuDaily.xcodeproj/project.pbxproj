@@ -21,6 +21,7 @@
 		B5C02FE329D5BAF300004953 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C02FE229D5BAF300004953 /* main.m */; };
 		B5FE3A6929DBEA9B00231578 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A6829DBEA9B00231578 /* NewsModel.m */; };
 		B5FE3A7529DD6CE300231578 /* NewsData.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A7429DD6CE300231578 /* NewsData.m */; };
+		B5FE3A7829DDA4C700231578 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A7729DDA4C700231578 /* MainTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		B5FE3A6E29DC585200231578 /* MainProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainProtocol.h; sourceTree = "<group>"; };
 		B5FE3A7329DD6CE300231578 /* NewsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsData.h; sourceTree = "<group>"; };
 		B5FE3A7429DD6CE300231578 /* NewsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsData.m; sourceTree = "<group>"; };
+		B5FE3A7629DDA4C700231578 /* MainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		B5FE3A7729DDA4C700231578 /* MainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 		B5B7D9C629DAD080008464C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B5FE3A7629DDA4C700231578 /* MainTableViewCell.h */,
+				B5FE3A7729DDA4C700231578 /* MainTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5FE3A6929DBEA9B00231578 /* NewsModel.m in Sources */,
+				B5FE3A7829DDA4C700231578 /* MainTableViewCell.m in Sources */,
 				B5B7D9C329DAD059008464C4 /* MainVC.m in Sources */,
 				B5C02FD229D5BAF200004953 /* AppDelegate.m in Sources */,
 				B5C02FE329D5BAF300004953 /* main.m in Sources */,

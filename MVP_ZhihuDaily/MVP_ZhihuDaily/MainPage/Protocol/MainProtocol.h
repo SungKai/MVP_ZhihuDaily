@@ -17,7 +17,7 @@
 - (void)showLatestNews:(NSDictionary *)latestModel;
 
 /// 展示过往新闻
-- (void)showBeforeNews:(DayModel *)beforeModel;
+- (void)showBeforeNews:(NSArray *)beforeModel;
 
 @end
 

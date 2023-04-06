@@ -15,6 +15,8 @@
 #define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
 // 状态栏高度
 #define STATUS_HEIGHT [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height
+// cell的title文字宽度 76:图片的宽，两个18:图片右侧距离屏幕右边的距离，文字右侧距离图片左侧的距离，20:文字左侧距离屏幕左侧的距离
+#define WIDTH DEVICESCREENWIDTH - 76 - 18 - 20 - 18
 
 // MARK: URL
 
