@@ -11,7 +11,9 @@
 @interface MainVC () <
     MainProtocol,
     UITableViewDataSource,
-    UITableViewDelegate
+    UITableViewDelegate,
+    UICollectionViewDelegate,
+    UICollectionViewDataSource
 >
 
 /// Presenter
@@ -19,6 +21,9 @@
 
 /// 顶部View
 @property (nonatomic, strong) TopView *topView;
+
+/// 新闻列表
+@property (nonatomic, strong) BannerCollectionView *bannerCollectionView;
 
 /// 新闻列表
 @property (nonatomic, strong) UITableView *tableView;
@@ -29,6 +34,9 @@
 /// 列表新闻数据
 @property (nonatomic, strong) NSMutableArray *newsList;
 
+/// 定时器
+@property (nonatomic, strong) NSTimer *timer;
+
 @end
 
 @implementation MainVC
@@ -36,20 +44,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    self.bannerNewsList = [NSArray array];
+    self.bannerNewsList = [[NSArray alloc] init];
     self.newsList = [NSMutableArray array];
     [self.view addSubview:self.topView];
     [self setTodayDateString];
     // 请求最新信息
     [self.presenter fetchLatestNewsData];
+    // banner
+    self.bannerCollectionView.dataSource = self;
+    self.bannerCollectionView.delegate = self;
+    // list
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    // 创建定时器
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
 }
 
 
 #pragma mark - Method
 
+/// 翻页
+- (void)nextPage {
+    // 计算下一页的位置
+    NSInteger nextPage = (self.bannerCollectionView.contentOffset.x + self.bannerCollectionView.bounds.size.width) / self.bannerCollectionView.bounds.size.width;
+    if (nextPage == self.bannerNewsList.count) {
+        nextPage = 0;
+    }
+    [self.bannerCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:nextPage inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+}
+
+/// 设置日期文本
 - (void)setTodayDateString {
     self.topView.monthLab.text = [[NSDate today] transformChinese];
     self.topView.dayLab.text = [[NSDate today]day];
@@ -67,7 +92,7 @@
     [self.newsList addObject:latestModel[@"listData"]];
     self.bannerNewsList = latestModel[@"bannerData"];
     // TODO: Banner reloadData
-    
+    [self.bannerCollectionView reloadData];
     [self.tableView reloadData];
 }
 
@@ -78,6 +103,32 @@
     [self.newsList addObject:beforeModel];
     [self.tableView reloadData];
 }
+
+// MARK: <UICollectionViewDataSource>
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.bannerNewsList.count;
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *bannerID = @"bannerID";
+    BannerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:bannerID forIndexPath:indexPath];
+    BannerData *bannerData = self.bannerNewsList[indexPath.row];
+    cell.titleLab.text = bannerData.title;
+    cell.hintLab.text = bannerData.hint;
+    [cell.imgView setImageWithURL:[NSURL URLWithString:bannerData.imageURL] placeholderImage:[UIImage imageNamed:@"defaultImage"]];
+    // 图片宽高适配
+    cell.imgView.clipsToBounds = YES;
+    [cell.imgView setContentMode:UIViewContentModeScaleAspectFill];    
+    return cell;
+}
+
+// MARK: <UICollectionViewDelegate>
+
 
 // MARK: <UITableViewDataSource>
 
@@ -162,10 +213,19 @@
     return _topView;
 }
 
+- (BannerCollectionView *)bannerCollectionView {
+    if (_bannerCollectionView == nil) {
+        _bannerCollectionView = [[BannerCollectionView alloc] initWithFrame:CGRectMake(0, STATUS_HEIGHT + self.topView.frame.size.height, DEVICESCREENWIDTH, DEVICESCREENWIDTH)];
+        _bannerCollectionView.showsHorizontalScrollIndicator = NO;
+    }
+    return _bannerCollectionView;
+}
+
 - (UITableView *)tableView {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, STATUS_HEIGHT + 60, DEVICESCREENWIDTH, DEVICESCREENHEIGHT - (STATUS_HEIGHT + 60)) style:UITableViewStyleGrouped];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.tableHeaderView = self.bannerCollectionView;
     }
     return _tableView;
 }

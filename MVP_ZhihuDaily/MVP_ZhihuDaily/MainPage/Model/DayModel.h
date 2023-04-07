@@ -18,9 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *date;
 
-@property (nonatomic, strong) NSArray<BannerDataModel *> *top_stories;
+@property (nonatomic, copy) NSArray<BannerDataModel *> *top_stories;
 
-@property (nonatomic, strong) NSArray<DataModel *> *stories;
+@property (nonatomic, copy) NSArray<DataModel *> *stories;
 
 /// 请求Latest数据
 /// @param LatestDayModel 当天的新闻数据

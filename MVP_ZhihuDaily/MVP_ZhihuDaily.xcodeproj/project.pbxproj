@@ -25,6 +25,8 @@
 		B5FE3A7B29DEEA3300231578 /* DateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A7A29DEEA3300231578 /* DateHeaderView.m */; };
 		B5FE3A8129DEFDE400231578 /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A8029DEFDE400231578 /* TopView.m */; };
 		B5FE3A8529DF08FE00231578 /* NSDate+Day.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A8329DF08FE00231578 /* NSDate+Day.m */; };
+		B5FE3A8C29DFF19300231578 /* BannerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A8B29DFF19300231578 /* BannerCollectionView.m */; };
+		B5FE3A9029DFF40B00231578 /* BannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A8F29DFF40B00231578 /* BannerCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,10 @@
 		B5FE3A8029DEFDE400231578 /* TopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopView.m; sourceTree = "<group>"; };
 		B5FE3A8329DF08FE00231578 /* NSDate+Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Day.m"; sourceTree = "<group>"; };
 		B5FE3A8429DF08FE00231578 /* NSDate+Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Day.h"; sourceTree = "<group>"; };
+		B5FE3A8A29DFF19300231578 /* BannerCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerCollectionView.h; sourceTree = "<group>"; };
+		B5FE3A8B29DFF19300231578 /* BannerCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerCollectionView.m; sourceTree = "<group>"; };
+		B5FE3A8E29DFF40B00231578 /* BannerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerCollectionViewCell.h; sourceTree = "<group>"; };
+		B5FE3A8F29DFF40B00231578 /* BannerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 		B5B7D9C629DAD080008464C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B5FE3A8629DFF15600231578 /* banner */,
 				B5FE3A7E29DEFDD200231578 /* TopView */,
 				B5FE3A7C29DEEA3A00231578 /* cell */,
 				B5FE3A7D29DEEA4400231578 /* date */,
@@ -231,6 +238,25 @@
 				B5FE3A8329DF08FE00231578 /* NSDate+Day.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		B5FE3A8629DFF15600231578 /* banner */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE3A8A29DFF19300231578 /* BannerCollectionView.h */,
+				B5FE3A8B29DFF19300231578 /* BannerCollectionView.m */,
+				B5FE3A8D29DFF3F600231578 /* cell */,
+			);
+			path = banner;
+			sourceTree = "<group>";
+		};
+		B5FE3A8D29DFF3F600231578 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE3A8E29DFF40B00231578 /* BannerCollectionViewCell.h */,
+				B5FE3A8F29DFF40B00231578 /* BannerCollectionViewCell.m */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		E2FED50C52CD4F8286CF9007 /* Frameworks */ = {
@@ -366,6 +392,7 @@
 			files = (
 				B5FE3A6929DBEA9B00231578 /* NewsModel.m in Sources */,
 				B5FE3A7829DDA4C700231578 /* MainTableViewCell.m in Sources */,
+				B5FE3A9029DFF40B00231578 /* BannerCollectionViewCell.m in Sources */,
 				B5B7D9C329DAD059008464C4 /* MainVC.m in Sources */,
 				B5C02FD229D5BAF200004953 /* AppDelegate.m in Sources */,
 				B5C02FE329D5BAF300004953 /* main.m in Sources */,
@@ -374,6 +401,7 @@
 				B5B7D9D829DAFE55008464C4 /* BannerDataModel.m in Sources */,
 				B5FE3A8129DEFDE400231578 /* TopView.m in Sources */,
 				B5B7D9D229DADAAD008464C4 /* NetworkManager.m in Sources */,
+				B5FE3A8C29DFF19300231578 /* BannerCollectionView.m in Sources */,
 				B5FE3A7B29DEEA3300231578 /* DateHeaderView.m in Sources */,
 				B5FE3A8529DF08FE00231578 /* NSDate+Day.m in Sources */,
 				B5FE3A7529DD6CE300231578 /* NewsData.m in Sources */,

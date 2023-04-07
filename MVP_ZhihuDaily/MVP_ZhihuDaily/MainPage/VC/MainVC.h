@@ -12,6 +12,7 @@
 
 // View
 #import "TopView.h"
+#import "BannerCollectionView.h"
 #import "MainTableViewCell.h"
 #import "DateHeaderView.h"
 

@@ -71,7 +71,7 @@
         BannerData *data = [[BannerData alloc] init];
         data.title = model.title;
         data.hint = model.hint;
-        data.imageURL = model.imageURL;
+        data.imageURL = model.image;
         data.image_hue = model.image_hue;
         [bannerMa addObject:data];
     }
