@@ -27,7 +27,7 @@
 
 - (UILabel *)titleLab {
     if (_titleLab == nil) {
-        _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(30, DEVICESCREENWIDTH - 120, DEVICESCREENWIDTH - 28 - 28, 70)];
+        _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(30, DEVICESCREENWIDTH - 110, DEVICESCREENWIDTH - 28 - 28, 70)];
         _titleLab.textColor = UIColor.whiteColor;
         _titleLab.font = [UIFont boldSystemFontOfSize:24];
         _titleLab.numberOfLines = 0;
@@ -38,7 +38,7 @@
 
 - (UILabel *)hintLab {
     if (_hintLab == nil) {
-        _hintLab = [[UILabel alloc] initWithFrame:CGRectMake(30, DEVICESCREENWIDTH - 45, DEVICESCREENWIDTH - 28 - 28, 18)];
+        _hintLab = [[UILabel alloc] initWithFrame:CGRectMake(30, DEVICESCREENWIDTH - 35, DEVICESCREENWIDTH - 28 - 28, 18)];
         _hintLab.textColor = [UIColor colorWithRed:214/255.0 green:208/255.0 blue:203/255.0 alpha:1.0];
         _hintLab.font = [UIFont systemFontOfSize:15];
         _hintLab.numberOfLines = 0;

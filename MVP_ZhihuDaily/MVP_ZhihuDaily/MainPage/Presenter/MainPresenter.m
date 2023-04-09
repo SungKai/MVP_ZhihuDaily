@@ -75,8 +75,12 @@
         data.image_hue = model.image_hue;
         [bannerMa addObject:data];
     }
+    // 为了实现轮播效果
+    // 尾部插入第一张
+    [bannerMa addObject:bannerMa[0]];
     NSArray *bannerData = [NSArray array];
     bannerData = bannerMa;
+    
     // 列表数据
     NSMutableArray *listMa = [NSMutableArray array];
     for (DataModel *model in latestDayModel.stories) {

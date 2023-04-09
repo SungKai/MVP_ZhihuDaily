@@ -37,6 +37,8 @@
 /// 定时器
 @property (nonatomic, strong) NSTimer *timer;
 
+@property (nonatomic, assign) BOOL isDragging;
+
 @end
 
 @implementation MainVC
@@ -57,27 +59,61 @@
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    // 创建定时器
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+    [self addTimer];
 }
 
 
 #pragma mark - Method
 
-/// 翻页
-- (void)nextPage {
-    // 计算下一页的位置
-    NSInteger nextPage = (self.bannerCollectionView.contentOffset.x + self.bannerCollectionView.bounds.size.width) / self.bannerCollectionView.bounds.size.width;
-    if (nextPage == self.bannerNewsList.count) {
-        nextPage = 0;
-    }
-    [self.bannerCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:nextPage inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
-}
-
 /// 设置日期文本
 - (void)setTodayDateString {
     self.topView.monthLab.text = [[NSDate today] transformChinese];
     self.topView.dayLab.text = [[NSDate today]day];
+}
+
+// 判断当前是否滚动到了首尾元素，如果是则将其滚动到对应的原数据源元素上
+- (void)handleScrollToEdge {
+    CGFloat pageWidth = self.bannerCollectionView.frame.size.width;
+    NSInteger currentPage = self.bannerCollectionView.contentOffset.x / pageWidth;
+    if (currentPage == 0) {
+        [self.bannerCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.bannerNewsList.count - 2 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    } else if (currentPage == self.bannerNewsList.count - 1) {
+        [self.bannerCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    }
+}
+
+- (void)addTimer {
+    if (!self.timer) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(handleTimer) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    }
+}
+
+- (void)removeTimer {
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+/// 定时器事件处理
+- (void)handleTimer {
+    if (self.bannerNewsList.count == 0) {
+        return;
+    }
+    NSIndexPath *currentIndexPath = [[self.bannerCollectionView indexPathsForVisibleItems] firstObject];
+    NSInteger nextItem = currentIndexPath.item + 1;
+    if (nextItem >= self.bannerNewsList.count) {
+        nextItem = 0;
+    }
+    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem inSection:0];
+    [self.bannerCollectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+}
+
+- (void)adjustCollectionViewOffset {
+    NSInteger currentPage = (self.bannerCollectionView.contentOffset.x + self.bannerCollectionView.frame.size.width / 2) / self.bannerCollectionView.frame.size.width;
+    // 如果当前展示的是最后一张图片，就将 UICollectionView 的偏移量调整到第二张图片（也就是数据源数组中的第一个图片），这样下一次自动滚动时就会直接滚动到第三张图片，从而实现循环滚动的效果；
+    if (currentPage == self.bannerNewsList.count - 1) {
+        [self.bannerCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    }
 }
 
 #pragma mark - Delegate
@@ -91,11 +127,9 @@
     [self.newsList removeAllObjects];
     [self.newsList addObject:latestModel[@"listData"]];
     self.bannerNewsList = latestModel[@"bannerData"];
-    // TODO: Banner reloadData
     [self.bannerCollectionView reloadData];
     [self.tableView reloadData];
 }
-
 
 /// 展示过往新闻
 - (void)showBeforeNews:(NSArray *)beforeModel {
@@ -129,6 +163,23 @@
 
 // MARK: <UICollectionViewDelegate>
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    self.isDragging = YES;
+    [self removeTimer];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    self.isDragging = NO;
+    [self addTimer];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self adjustCollectionViewOffset];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    [self adjustCollectionViewOffset];
+}
 
 // MARK: <UITableViewDataSource>
 
