@@ -71,17 +71,6 @@
     self.topView.dayLab.text = [[NSDate today]day];
 }
 
-// 判断当前是否滚动到了首尾元素，如果是则将其滚动到对应的原数据源元素上
-- (void)handleScrollToEdge {
-    CGFloat pageWidth = self.bannerCollectionView.frame.size.width;
-    NSInteger currentPage = self.bannerCollectionView.contentOffset.x / pageWidth;
-    if (currentPage == 0) {
-        [self.bannerCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.bannerNewsList.count - 2 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-    } else if (currentPage == self.bannerNewsList.count - 1) {
-        [self.bannerCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-    }
-}
-
 - (void)addTimer {
     if (!self.timer) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(handleTimer) userInfo:nil repeats:YES];
@@ -157,7 +146,10 @@
     [cell.imgView setImageWithURL:[NSURL URLWithString:bannerData.imageURL] placeholderImage:[UIImage imageNamed:@"defaultImage"]];
     // 图片宽高适配
     cell.imgView.clipsToBounds = YES;
-    [cell.imgView setContentMode:UIViewContentModeScaleAspectFill];    
+    [cell.imgView setContentMode:UIViewContentModeScaleAspectFill];
+    if (bannerData.image_hue != nil) {
+        cell.grandLayer.colors = @[(__bridge id)[UIColor clearColor].CGColor, (__bridge id)bannerData.image_hue.CGColor];
+    }
     return cell;
 }
 

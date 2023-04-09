@@ -13,15 +13,12 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self.contentView addSubview:self.imgView];
+        [self.contentView.layer addSublayer:self.grandLayer];
         [self.contentView addSubview:self.titleLab];
         [self.contentView addSubview:self.hintLab];
     }
     return self;
 }
-
-#pragma mark - Method
-
-
 
 #pragma mark - Getter
 
@@ -58,5 +55,14 @@
     return _imgView;
 }
 
+- (CAGradientLayer *)grandLayer {
+    if (_grandLayer == nil) {
+        _grandLayer = [CAGradientLayer layer];
+        _grandLayer.frame = CGRectMake(0, self.bounds.size.height * 0.6, self.bounds.size.width, self.bounds.size.height * 0.4);
+        _grandLayer.startPoint = CGPointMake(0, 0);
+        _grandLayer.endPoint = CGPointMake(0, 1);
+    }
+    return _grandLayer;
+}
 
 @end

@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIImageView *imgView;
 
+/// 控制图像色调
+@property (nonatomic, strong) CAGradientLayer *grandLayer;
+
 @end
 
 NS_ASSUME_NONNULL_END

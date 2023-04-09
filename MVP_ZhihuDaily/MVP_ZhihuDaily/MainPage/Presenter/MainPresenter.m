@@ -13,6 +13,9 @@
 // Protocol
 #import "MainProtocol.h"
 
+// Tools
+#import "UIColor+Hex.h"
+
 @interface MainPresenter () <
     NewsModelDelegate
 >
@@ -72,7 +75,7 @@
         data.title = model.title;
         data.hint = model.hint;
         data.imageURL = model.image;
-        data.image_hue = model.image_hue;
+        data.image_hue = [UIColor colorWithHexString:model.image_hue];
         [bannerMa addObject:data];
     }
     // 为了实现轮播效果

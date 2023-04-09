@@ -27,6 +27,7 @@
 		B5FE3A8529DF08FE00231578 /* NSDate+Day.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A8329DF08FE00231578 /* NSDate+Day.m */; };
 		B5FE3A8C29DFF19300231578 /* BannerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A8B29DFF19300231578 /* BannerCollectionView.m */; };
 		B5FE3A9029DFF40B00231578 /* BannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A8F29DFF40B00231578 /* BannerCollectionViewCell.m */; };
+		B5FE3A9329E2B7F800231578 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A9229E2B7F800231578 /* UIColor+Hex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		B5FE3A8B29DFF19300231578 /* BannerCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerCollectionView.m; sourceTree = "<group>"; };
 		B5FE3A8E29DFF40B00231578 /* BannerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerCollectionViewCell.h; sourceTree = "<group>"; };
 		B5FE3A8F29DFF40B00231578 /* BannerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerCollectionViewCell.m; sourceTree = "<group>"; };
+		B5FE3A9129E2B7F800231578 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		B5FE3A9229E2B7F800231578 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +239,8 @@
 			children = (
 				B5FE3A8429DF08FE00231578 /* NSDate+Day.h */,
 				B5FE3A8329DF08FE00231578 /* NSDate+Day.m */,
+				B5FE3A9129E2B7F800231578 /* UIColor+Hex.h */,
+				B5FE3A9229E2B7F800231578 /* UIColor+Hex.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5FE3A6929DBEA9B00231578 /* NewsModel.m in Sources */,
+				B5FE3A9329E2B7F800231578 /* UIColor+Hex.m in Sources */,
 				B5FE3A7829DDA4C700231578 /* MainTableViewCell.m in Sources */,
 				B5FE3A9029DFF40B00231578 /* BannerCollectionViewCell.m in Sources */,
 				B5B7D9C329DAD059008464C4 /* MainVC.m in Sources */,

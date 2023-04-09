@@ -17,8 +17,6 @@
     layout.itemSize = CGSizeMake(DEVICESCREENWIDTH, DEVICESCREENWIDTH); // 指定单元格大小
     layout.minimumLineSpacing = 0; // 设置行间距
     layout.minimumInteritemSpacing = 0; // 设置列间距
-    //可能会被强制调整,取决于UIEdgeInsetsMake
-//    layout.sectionInset = UIEdgeInsetsMake(10, 25, 10, 25);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal; // 设置滚动方向为横向
     self.pagingEnabled = YES;
     return [self initWithFrame:frame collectionViewLayout:layout];
