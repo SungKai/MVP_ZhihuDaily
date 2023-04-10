@@ -55,7 +55,7 @@
         _titleLab = [[UILabel alloc]init];
         _titleLab.textColor = UIColor.blackColor;
         _titleLab.font = [UIFont boldSystemFontOfSize:17];
-        _titleLab.backgroundColor = [UIColor lightGrayColor];
+        _titleLab.backgroundColor = UIColor.lightGrayColor;
         _titleLab.frame = CGRectMake(20, 15, WIDTH, 43);
         _titleLab.numberOfLines = 0;
         _titleLab.textAlignment = NSTextAlignmentLeft;
@@ -68,7 +68,7 @@
         _hintLab = [[UILabel alloc]init];
         _hintLab.textColor = [UIColor lightGrayColor];
         _hintLab.font = [UIFont systemFontOfSize:14];
-        _hintLab.backgroundColor = [UIColor lightGrayColor];
+        _hintLab.backgroundColor = UIColor.lightGrayColor;
         _hintLab.frame = CGRectMake(20, 64, WIDTH, 16);
         _hintLab.numberOfLines = 0;
         _hintLab.textAlignment = NSTextAlignmentLeft;
@@ -79,7 +79,7 @@
 - (UIImageView *)imgView{
     if (_imgView == nil) {
         _imgView = [[UIImageView alloc]init];
-        _imgView.backgroundColor = [UIColor grayColor];
+        _imgView.backgroundColor = UIColor.grayColor;
         _imgView.layer.masksToBounds = YES;
         _imgView.layer.cornerRadius = 4;
         _imgView.backgroundColor = [UIColor lightGrayColor];

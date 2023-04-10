@@ -196,6 +196,10 @@
     if (self.newsList.count != 0) {
         [cell setNormalBackground];
     }
+    // 设置选中后的背景为透明
+    UIView *selectedBackgroundView = [[UIView alloc] init];
+    selectedBackgroundView.backgroundColor = [UIColor clearColor];
+    cell.selectedBackgroundView = selectedBackgroundView;
     NewsData *newsData = self.newsList[indexPath.section][indexPath.row];
     cell.titleLab.text = newsData.title;
     cell.hintLab.text = newsData.hint;
@@ -249,6 +253,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 设置文字变灰效果
+    MainTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.titleLab.textColor = UIColor.lightGrayColor;
     NewsData *newsData = self.newsList[indexPath.section][indexPath.row];
     NSString *idStr = newsData.idStr;
     NewDetailsPresenter *presenter = [[NewDetailsPresenter alloc] initWithID:idStr];

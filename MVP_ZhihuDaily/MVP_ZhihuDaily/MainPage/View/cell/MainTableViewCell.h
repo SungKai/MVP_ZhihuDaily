@@ -9,6 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// 新闻列表的cell
 @interface MainTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *titleLab;
