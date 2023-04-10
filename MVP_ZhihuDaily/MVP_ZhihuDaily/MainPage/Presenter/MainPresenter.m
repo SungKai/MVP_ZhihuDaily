@@ -58,6 +58,7 @@
     [self.newsModel fetchBeforeNewsWithDate:date];
 }
 
+
 #pragma mark - Delegate
 
 
@@ -76,6 +77,7 @@
         data.hint = model.hint;
         data.imageURL = model.image;
         data.image_hue = [UIColor colorWithHexString:model.image_hue];
+        data.idStr = model.ID;
         [bannerMa addObject:data];
     }
     // 为了实现轮播效果
@@ -92,6 +94,7 @@
         data.hint = model.hint;
         data.imageURL = model.imageURL;
         data.date = latestDayModel.date;
+        data.idStr = model.ID;
         [listMa addObject:data];
     }
     NSArray *listData = [NSArray array];

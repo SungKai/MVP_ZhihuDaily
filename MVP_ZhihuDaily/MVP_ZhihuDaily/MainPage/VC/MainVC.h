@@ -9,6 +9,10 @@
 
 // Presenter
 #import "MainPresenter.h"
+#import "NewDetailsPresenter.h"
+
+// VC
+#import "NewDetailsVC.h"
 
 // View
 #import "TopView.h"

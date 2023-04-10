@@ -28,6 +28,10 @@
 		B5FE3A8C29DFF19300231578 /* BannerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A8B29DFF19300231578 /* BannerCollectionView.m */; };
 		B5FE3A9029DFF40B00231578 /* BannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A8F29DFF40B00231578 /* BannerCollectionViewCell.m */; };
 		B5FE3A9329E2B7F800231578 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A9229E2B7F800231578 /* UIColor+Hex.m */; };
+		B5FE3A9A29E2F05900231578 /* NewDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3A9929E2F05900231578 /* NewDetailsVC.m */; };
+		B5FE3AA129E2F10800231578 /* NewDetailsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3AA029E2F10800231578 /* NewDetailsPresenter.m */; };
+		B5FE3AA529E3FB1C00231578 /* NewDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3AA429E3FB1C00231578 /* NewDetailsModel.m */; };
+		B5FE3AAB29E4044200231578 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3AAA29E4044200231578 /* DetailModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +78,15 @@
 		B5FE3A8F29DFF40B00231578 /* BannerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerCollectionViewCell.m; sourceTree = "<group>"; };
 		B5FE3A9129E2B7F800231578 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		B5FE3A9229E2B7F800231578 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		B5FE3A9529E2F02800231578 /* NewDetailsVCProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewDetailsVCProtocol.h; sourceTree = "<group>"; };
+		B5FE3A9829E2F05900231578 /* NewDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewDetailsVC.h; sourceTree = "<group>"; };
+		B5FE3A9929E2F05900231578 /* NewDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewDetailsVC.m; sourceTree = "<group>"; };
+		B5FE3A9F29E2F10800231578 /* NewDetailsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewDetailsPresenter.h; sourceTree = "<group>"; };
+		B5FE3AA029E2F10800231578 /* NewDetailsPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewDetailsPresenter.m; sourceTree = "<group>"; };
+		B5FE3AA329E3FB1C00231578 /* NewDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewDetailsModel.h; sourceTree = "<group>"; };
+		B5FE3AA429E3FB1C00231578 /* NewDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewDetailsModel.m; sourceTree = "<group>"; };
+		B5FE3AA929E4044200231578 /* DetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
+		B5FE3AAA29E4044200231578 /* DetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				B5B7D9C429DAD060008464C4 /* MainPage */,
+				B5FE3A9429E2EBB100231578 /* NewDetailsPage */,
 				B5FE3A8229DF08DD00231578 /* Tools */,
 				B5C02FEA29D5BD6900004953 /* Supporting Files */,
 				B5C02FDC29D5BAF300004953 /* Assets.xcassets */,
@@ -262,6 +276,54 @@
 				B5FE3A8F29DFF40B00231578 /* BannerCollectionViewCell.m */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		B5FE3A9429E2EBB100231578 /* NewDetailsPage */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE3A9629E2F03400231578 /* Protocol */,
+				B5FE3A9B29E2F0D900231578 /* Presenter */,
+				B5FE3A9729E2F04100231578 /* VC */,
+				B5FE3AA229E3FAF800231578 /* Model */,
+			);
+			path = NewDetailsPage;
+			sourceTree = "<group>";
+		};
+		B5FE3A9629E2F03400231578 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE3A9529E2F02800231578 /* NewDetailsVCProtocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B5FE3A9729E2F04100231578 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE3A9829E2F05900231578 /* NewDetailsVC.h */,
+				B5FE3A9929E2F05900231578 /* NewDetailsVC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		B5FE3A9B29E2F0D900231578 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE3A9F29E2F10800231578 /* NewDetailsPresenter.h */,
+				B5FE3AA029E2F10800231578 /* NewDetailsPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B5FE3AA229E3FAF800231578 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE3AA329E3FB1C00231578 /* NewDetailsModel.h */,
+				B5FE3AA429E3FB1C00231578 /* NewDetailsModel.m */,
+				B5FE3AA929E4044200231578 /* DetailModel.h */,
+				B5FE3AAA29E4044200231578 /* DetailModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E2FED50C52CD4F8286CF9007 /* Frameworks */ = {
@@ -396,15 +458,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5FE3A6929DBEA9B00231578 /* NewsModel.m in Sources */,
+				B5FE3AA529E3FB1C00231578 /* NewDetailsModel.m in Sources */,
+				B5FE3AAB29E4044200231578 /* DetailModel.m in Sources */,
 				B5FE3A9329E2B7F800231578 /* UIColor+Hex.m in Sources */,
 				B5FE3A7829DDA4C700231578 /* MainTableViewCell.m in Sources */,
 				B5FE3A9029DFF40B00231578 /* BannerCollectionViewCell.m in Sources */,
 				B5B7D9C329DAD059008464C4 /* MainVC.m in Sources */,
 				B5C02FD229D5BAF200004953 /* AppDelegate.m in Sources */,
+				B5FE3A9A29E2F05900231578 /* NewDetailsVC.m in Sources */,
 				B5C02FE329D5BAF300004953 /* main.m in Sources */,
 				B5B7D9D529DAFD89008464C4 /* DataModel.m in Sources */,
 				B5B7D9DB29DB00E8008464C4 /* DayModel.m in Sources */,
 				B5B7D9D829DAFE55008464C4 /* BannerDataModel.m in Sources */,
+				B5FE3AA129E2F10800231578 /* NewDetailsPresenter.m in Sources */,
 				B5FE3A8129DEFDE400231578 /* TopView.m in Sources */,
 				B5B7D9D229DADAAD008464C4 /* NetworkManager.m in Sources */,
 				B5FE3A8C29DFF19300231578 /* BannerCollectionView.m in Sources */,

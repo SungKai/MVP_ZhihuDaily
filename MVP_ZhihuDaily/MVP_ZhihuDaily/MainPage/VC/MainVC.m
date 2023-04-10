@@ -155,6 +155,14 @@
 
 // MARK: <UICollectionViewDelegate>
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    BannerData *bannerData = self.bannerNewsList[indexPath.row];
+    NSString *idStr = bannerData.idStr;
+    NewDetailsPresenter *presenter = [[NewDetailsPresenter alloc] initWithID:idStr];
+    NewDetailsVC *newDetailsVC = [[NewDetailsVC alloc] initWithPresenter:presenter];
+    [self.navigationController pushViewController:newDetailsVC animated:YES];
+}
+
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     self.isDragging = YES;
     [self removeTimer];
@@ -238,6 +246,14 @@
     NSInteger day = [[date substringFromIndex:6] integerValue];
     DateHeaderView *dateHeaderView = [[DateHeaderView alloc] initWithDateHeaderViewWithDate:[NSString stringWithFormat:@"%ld月%ld日", month, day]];
     return dateHeaderView;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NewsData *newsData = self.newsList[indexPath.section][indexPath.row];
+    NSString *idStr = newsData.idStr;
+    NewDetailsPresenter *presenter = [[NewDetailsPresenter alloc] initWithID:idStr];
+    NewDetailsVC *newDetailsVC = [[NewDetailsVC alloc] initWithPresenter:presenter];
+    [self.navigationController pushViewController:newDetailsVC animated:YES];
 }
 
 #pragma mark - Getter

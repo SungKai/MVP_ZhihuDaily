@@ -29,7 +29,7 @@
 #define beforeNews @"/stories/before/%@"
 
 // 新闻详情页内容
-#define ArticleNew @"news/%@"
+#define ArticleNew @"https://news-at.zhihu.com/api/3/news/%@"
 
 // 新闻额外信息
 #define ExtraInformation @"story-extra/%@"

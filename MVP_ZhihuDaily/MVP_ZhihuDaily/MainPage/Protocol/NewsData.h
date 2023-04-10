@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *date;
 
+@property (nonatomic, copy) NSString *idStr;
+
 @end
 
 @interface BannerData : NSObject
@@ -33,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *hint;
 
 @property (nonatomic, copy) UIColor *image_hue;
+
+@property (nonatomic, copy) NSString *idStr;
 
 @end
 NS_ASSUME_NONNULL_END
