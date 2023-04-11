@@ -23,10 +23,10 @@
 #define baseURL [NSURL URLWithString:@"https://news-at.zhihu.com/api/3"]
 
 // 最新新闻（当日新闻）
-#define latestNews @"/news/latest"
+#define latestNews @"news/latest"
 
 // 过往新闻
-#define beforeNews @"/stories/before/%@"
+#define beforeNews @"stories/before/%@"
 
 // 新闻详情页内容
 #define ArticleNew @"https://news-at.zhihu.com/api/3/news/%@"

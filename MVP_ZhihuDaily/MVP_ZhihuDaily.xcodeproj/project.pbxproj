@@ -104,12 +104,11 @@
 		B5B7D9C429DAD060008464C4 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				B5B7D9CA29DAD0B7008464C4 /* Presenter */,
 				B5FE3A7229DD6C3A00231578 /* Protocol */,
+				B5B7D9CA29DAD0B7008464C4 /* Presenter */,
 				B5B7D9C529DAD073008464C4 /* VC */,
 				B5B7D9C629DAD080008464C4 /* View */,
 				B5B7D9CE29DAD9E7008464C4 /* Model */,
-				B5B7D9CF29DADA8C008464C4 /* Tool */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -156,15 +155,6 @@
 				B5B7D9D729DAFE55008464C4 /* BannerDataModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		B5B7D9CF29DADA8C008464C4 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				B5B7D9D029DADAAD008464C4 /* NetworkManager.h */,
-				B5B7D9D129DADAAD008464C4 /* NetworkManager.m */,
-			);
-			path = Tool;
 			sourceTree = "<group>";
 		};
 		B5C02FC429D5BAF200004953 = {
@@ -251,6 +241,7 @@
 		B5FE3A8229DF08DD00231578 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B5FE3AAC29E5871E00231578 /* Network */,
 				B5FE3A8429DF08FE00231578 /* NSDate+Day.h */,
 				B5FE3A8329DF08FE00231578 /* NSDate+Day.m */,
 				B5FE3A9129E2B7F800231578 /* UIColor+Hex.h */,
@@ -324,6 +315,15 @@
 				B5FE3AAA29E4044200231578 /* DetailModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B5FE3AAC29E5871E00231578 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B5B7D9D029DADAAD008464C4 /* NetworkManager.h */,
+				B5B7D9D129DADAAD008464C4 /* NetworkManager.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		E2FED50C52CD4F8286CF9007 /* Frameworks */ = {

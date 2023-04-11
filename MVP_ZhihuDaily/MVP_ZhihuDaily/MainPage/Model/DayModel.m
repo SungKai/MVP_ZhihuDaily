@@ -20,7 +20,7 @@
 
 + (void)getLatest:(void (^)(DayModel * _Nonnull))LatestDayModel {
     [[NetworkManager shareManager]
-     requestURL:@"https://news-at.zhihu.com/api/3/news/latest"
+     requestURL:latestNews
      type:NetworkManagerRequestTypeGet
      parameters:nil
      progress:nil
@@ -40,7 +40,7 @@
 /// 请求Before数据
 + (void)getBeforeDate:(NSString *)date AndModel:(void(^)(DayModel *))beforeModel {
     [[NetworkManager shareManager]
-     requestURL:[NSString stringWithFormat:@"https://news-at.zhihu.com/api/3/stories/before/%@", date]
+     requestURL:[NSString stringWithFormat:beforeNews, date]
      type:NetworkManagerRequestTypeGet
      parameters:nil
      progress:nil

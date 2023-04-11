@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 得到今天的day
 - (NSString *)day;
 - (NSString *)min;
-- (NSString *)s;
+
 // 得到今天的month
 - (NSString *)month;
 // 翻译为中文
