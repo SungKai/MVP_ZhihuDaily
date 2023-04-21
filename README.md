@@ -9,7 +9,7 @@ MVP 模式实现知乎日报部分功能
 
 ### 首页
 
-<img src="assets/首页.png" style="zoom: 25%;" /> 
+<img src="assets/首页.png"  /> 
 
 
 
@@ -29,7 +29,7 @@ MVP 模式实现知乎日报部分功能
 
 平平无奇，正常下拉查看过往新闻
 
-<img src="assets/新闻列表.png" style="zoom:50%;" /> 
+<img src="assets/新闻列表.png"  /> 
 
 
 
@@ -39,7 +39,7 @@ MVP 模式实现知乎日报部分功能
 
 点击banner 或者新闻列表进入新闻详情页
 
-<img src="assets/新闻详情页.png" style="zoom:50%;" /> 
+<img src="assets/新闻详情页.png"  /> 
 
 
 
