@@ -9,7 +9,7 @@ MVP 模式实现知乎日报部分功能
 
 ### 首页
 
-<img src="assets/首页.png" style="zoom:50%;" /> 
+<img src="assets/首页.png" style="zoom: 25%;" /> 
 
 
 
