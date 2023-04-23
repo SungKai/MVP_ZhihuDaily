@@ -27,10 +27,10 @@
     [self.presenter fetchNewsDetailsModel];
 }
 
-- (instancetype)initWithPresenter:(NewDetailsPresenter *)presnter {
+- (instancetype)initWithPresenter:(NewDetailsPresenter *)presenter {
     self = [super init];
     if (self) {
-        self.presenter = presnter;
+        self.presenter = presenter;
         self.presenter.view = self;
     }
     return self;

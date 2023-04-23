@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NewDetailsVC : UIViewController
 
-- (instancetype)initWithPresenter:(NewDetailsPresenter *)presnter;
+- (instancetype)initWithPresenter:(NewDetailsPresenter *)presenter;
 
 @end
 

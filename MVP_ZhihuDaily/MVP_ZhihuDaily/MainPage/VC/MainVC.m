@@ -244,7 +244,7 @@
 
 // 设置DateView为TableView的headerView
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    NewsData *data = self.newsList[section - 1][0];
+    NewsData *data = self.newsList[section][0];
     NSString *date = data.date;
     NSInteger month = [[date substringWithRange:NSMakeRange(4, 2)] integerValue];
     NSInteger day = [[date substringFromIndex:6] integerValue];
