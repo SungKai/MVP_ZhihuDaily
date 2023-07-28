@@ -73,7 +73,8 @@
 
 - (void)addTimer {
     if (!self.timer) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(handleTimer) userInfo:nil repeats:YES];
+        __weak typeof(self) weakSelf = self;
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:weakSelf selector:@selector(handleTimer) userInfo:nil repeats:YES];
         [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     }
 }
